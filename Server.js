@@ -40,6 +40,9 @@ mongoose.connect("mongodb+srv://amanda:Imissyoudaddy1@cluster0.htglcoa.mongodb.n
 const connection = mongoose.connection;
 connection.once("open", () => console.log("mongodb is connected"));
 
+app.get("/api/", (req,res)=>{
+  res.send("Connected!")
+})
 //-------------------------------------------------Secret----------------------------------
 
 //Add more secrets -- only posible through Postman or other related apps
