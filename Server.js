@@ -15,9 +15,12 @@ require("dotenv").config();
 
 const app = express();
 
+var distDir = __dirname + "/dist/";
+
 //Middlewares
 app.use(express.json());
 app.use(cors())
+app.use(express.static(distDir));
 
 // Enabling CORS for localhost 3000: CHANGE THIS DURING DEPLOYMENT!!!!.
 let corsOptions = {
@@ -40,7 +43,7 @@ mongoose.connect("mongodb+srv://amanda:Imissyoudaddy1@cluster0.htglcoa.mongodb.n
 const connection = mongoose.connection;
 connection.once("open", () => console.log("mongodb is connected"));
 
-app.get("/api/", (req,res)=>{
+app.get("/", (req,res)=>{
   res.send("Connected!")
 })
 //-------------------------------------------------Secret----------------------------------
