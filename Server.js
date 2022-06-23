@@ -15,12 +15,10 @@ require("dotenv").config();
 
 const app = express();
 
-var distDir = __dirname + "/dist/";
 
 //Middlewares
 app.use(express.json());
 app.use(cors())
-app.use(express.static(distDir));
 
 // Enabling CORS for localhost 3000: CHANGE THIS DURING DEPLOYMENT!!!!.
 let corsOptions = {
