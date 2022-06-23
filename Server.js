@@ -31,7 +31,7 @@ let corsOptions = {
 app.use(cors(corsOptions))
 
 
-const port = 5000;
+const port = process.env.PORT || 5000;
 
 //Fix this  ---->   const uri = process.env.MONGODB_CONNECTION_STRING;
 
@@ -87,8 +87,9 @@ app.post("/user", (req, res) => {
       } else {
 
         const newUser = new Users({
-          firstName: req.body.firstName,
-          lastName: req.body.lastName,
+          //Capitalizing the first letter of the user's first and last names
+          firstName: req.body.firstName.charAt(0).toUpperCase() + req.body.firstName.slice(1),
+          lastName:  req.body.lastName.charAt(0).toUpperCase() + req.body.lastName.slice(1),
           role: req.body.role,
           email: req.body.email,
           password: Bcrypt.hashSync(req.body.password, 10),
