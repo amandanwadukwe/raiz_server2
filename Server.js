@@ -22,7 +22,7 @@ app.use(cors())
 
 // Enabling CORS for localhost 3000: CHANGE THIS DURING DEPLOYMENT!!!!.
 let corsOptions = {
-  origin: ['http://localhost:3000'],
+  origin: ['https://raiz-cms-client.netlify.app'],
   
 }
 
