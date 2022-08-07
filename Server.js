@@ -261,7 +261,7 @@ app.post("/request_success", (req, res) => {
     from: 'nwadukweamanda@yahoo.com',
     to: req.body.email,
     subject: 'Registration Request Success',
-    text: 'The secret is: Amanda2'
+    text: 'The secret is: h+C*Y@aPK}8?H{+'
   };
 
   transporter.sendMail(mailOptions, function (error, info) {
